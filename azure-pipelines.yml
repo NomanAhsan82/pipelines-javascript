@@ -22,12 +22,12 @@ steps:
 - task: PublishCodeCoverageResults@1
   inputs:
     codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '$(System.DefaultWorkingDirectory)'
+    summaryFileLocation: $(System.DefaultWorkingDirectory)/MyApp/**/site/cobertura/coverage.xml
 
 - task: ArchiveFiles@2
   inputs:
       rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
-      includeRootFolder: true
+      includeRootFolder: false
       archiveType: 'zip'
       archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
       replaceExistingArchive: true
