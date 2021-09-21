@@ -16,8 +16,10 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    ls
     npm install
     npm run build
+    ls
   displayName: 'npm install and build'
 - task: PublishCodeCoverageResults@1
   inputs:
