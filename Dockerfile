@@ -15,4 +15,5 @@ COPY . .
 EXPOSE 3000
 
 #Define default command 
+#specifies what command to run within the container
 CMD ["node", "server.js"]
